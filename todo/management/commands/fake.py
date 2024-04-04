@@ -14,7 +14,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         for _ in range(10):
             task = Task.objects.get_or_create(
-                user = CustomeUser.object.get(id=1)
+                user = CustomeUser.objects.get(id=1),
                 title = self.faker.name(),
-                completed = choice(True,False),
+                complete = choice([True,False]),
             )
