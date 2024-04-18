@@ -44,9 +44,16 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'rest_framework_simplejwt',
     'mail_templated',
-
+    "corsheaders",
 
 ]
+
+
+
+
+ALLOWED_HOSTS = ['*']
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -160,4 +167,8 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ]
 } 
+
+
+CELERY_BROKER_URL = "redis://redis:6379/1"
+
 
